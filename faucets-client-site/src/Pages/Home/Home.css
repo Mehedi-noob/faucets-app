@@ -1,0 +1,36 @@
+.home{
+  background-color: #eef2fe;
+}
+
+.notice-board{
+  height: 70px;
+  background-color: #9b1fe9;
+}
+
+
+.warning{
+  background-color: #eef2fe;
+}
+
+.content-title > p{
+  width: 50;
+}
+
+.navlink-container{
+  display: flex;
+}
+
+.home-content{
+  padding: 0 25px;
+  margin: 0 30px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .content-title > p{
+    width: 100%;
+  }
+  .navlink-container{
+    display: block;
+  }
+}
