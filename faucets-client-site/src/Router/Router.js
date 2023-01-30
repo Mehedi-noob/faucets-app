@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AdminPanel from "../AdminPanel/AdminPanel";
 import ETHTransectionHistory from "../components/ETHTransectionHistory/ETHTransectionHistory";
 import TestlinkTransectionHistory from "../components/TestlinkTransactionHistory/TestlinkTransectionHistory";
 import Main from "../Layout/Main";
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: '/faq',
         element: <FAQ></FAQ>
+      },
+      {
+        path: '/admin',
+        element: <AdminPanel></AdminPanel>
       },
 
     ]

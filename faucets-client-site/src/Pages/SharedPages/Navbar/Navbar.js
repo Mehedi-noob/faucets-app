@@ -27,9 +27,15 @@ const NavBar = () => {
             Faucets
           </h2>
         </Link>
+        <Link to="/admin" className=" text-decoration-none">
+          <h2 className="ms-5 fs-3 fw-semibold custom-font mb-0">
+            Admin Panel
+          </h2>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
+            
             <Nav.Link>
               <Form.Select aria-label="Default select example">
                 <option value="Arbitrum Rinkeby">Arbitrum Rinkeby</option>
