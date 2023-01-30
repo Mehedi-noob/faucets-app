@@ -22,9 +22,9 @@ app.use("/user", usersHandler);
 
 
 app.get("/", async (req, res) => {
-  res.send("the fresh today server is running");
+  res.send("The Faucets Server is Running");
 });
 
 app.listen(port, () => {
-  console.log(`the fresh today server is running on ${port}`);
+  console.log(`The Faucets Server is Running on ${port}`);
 });
