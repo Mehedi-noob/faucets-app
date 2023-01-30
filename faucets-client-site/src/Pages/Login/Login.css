@@ -1,0 +1,20 @@
+.form{
+  height: 80vh;
+  background-color: #eef2fe;
+}
+
+.form-card{
+  width: 450px;
+  border:none !important;
+  padding: 8px;
+}
+
+.form-control:focus{
+  border-color: #6265e4 !important;
+  box-shadow: 0 0 0px #9b1fe9 !important;
+}
+
+.submit-btn{
+  background-color: #9b1fe9 !important;
+  width: 100%;
+}
