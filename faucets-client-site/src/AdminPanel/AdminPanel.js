@@ -8,7 +8,7 @@ import Table from 'react-bootstrap/Table';
 const AdminPanel = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://faucets-server-site.vercel.app/user')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
