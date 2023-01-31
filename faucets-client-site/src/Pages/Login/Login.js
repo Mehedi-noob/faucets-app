@@ -1,20 +1,55 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import GoogleSignIn from "../../components/GoogleSignIn/GoogleSignIn";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+  const {setUser, user} = useContext(AuthContext)
+
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+  //   const user = {
+  //     email,
+  //     password,
+  //   };
+  //   console.log(user);
+  // };
+
+  // login functions start 
   const handleLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const user = {
-      email,
-      password,
-    };
-    console.log(user);
+    const userEmail = e.target.email.value;
+    const userPassword = e.target.password.value;
+    const user = { userEmail, userPassword };
+
+    try {
+      fetch("http://localhost:5000/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", data.accessToken);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setUser(data.user);
+          e.target.reset();
+          toast.success('Login Successfull');
+          navigate("/");
+        });
+    }
+    catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -1,10 +1,13 @@
 import React from "react";
+import { useContext } from "react";
 import { AiFillWarning } from "react-icons/ai";
 import { NavLink, Outlet } from "react-router-dom";
 import WalletForm from "../../components/WalletForm/WalletForm";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import "./Home.css";
 
 const Home = () => {
+  const {testnet} = useContext(AuthContext);
   const navActive = ({ isActive }) => {
     return {
       fontWeight: isActive ? "500" : "normal",
@@ -34,8 +37,8 @@ const Home = () => {
           <p className="m-0 p-2 ">
             <AiFillWarning className="mb-1 fs-5 me-2 custom-color"></AiFillWarning>{" "}
             Your wallet is connected to{" "}
-            <span className="fw-bold">Ethereum Kovan</span>, so you are
-            requesting <span className="fw-bold">Ethereum Kovan</span> Link/ETH.
+            <span className="fw-bold">{testnet}</span>, so you are
+            requesting <span className="fw-bold">{testnet}</span> Link/ETH.
           </p>
         </div>
 

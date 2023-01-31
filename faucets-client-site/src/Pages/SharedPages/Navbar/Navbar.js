@@ -7,10 +7,26 @@ import "./NavBar.css";
 import ProfileDropdown from "../../../components/ProfileDropdown/ProfileDropdown";
 import WalletModal from "../../../components/WalletModal/WalletModal";
 import Form from "react-bootstrap/Form";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+
+const icon1 = require('../../../assets/icons/icon1.PNG')
+const icon2 = require('../../../assets/icons/icon2.PNG')
+const icon3 = require('../../../assets/icons/icon3.PNG')
+const icon4 = require('../../../assets/icons/icon4.PNG')
+const icon5 = require('../../../assets/icons/icon5.PNG')
+const icon6 = require('../../../assets/icons/icon6.PNG')
+const icon7 = require('../../../assets/icons/icon7.PNG')
+const icon8 = require('../../../assets/icons/icon8.PNG')
+const icon9 = require('../../../assets/icons/icon9.PNG')
 
 const NavBar = () => {
+
+  const ic = <img src={icon1}></img>
+
   const [openMenu, setOpenMenu] = useState(false);
   const [show, setShow] = useState(false);
+  const {setTestnet} = useContext(AuthContext);
 
   const handleShow = () => setShow(true);
   return (
@@ -37,8 +53,8 @@ const NavBar = () => {
           <Nav className="ms-auto">
             
             <Nav.Link>
-              <Form.Select aria-label="Default select example">
-                <option value="Arbitrum Rinkeby">Arbitrum Rinkeby</option>
+              {/* <Form.Select onChange={(e)=>setTestnet(e.target.value)} aria-label="Default select example" id="testnet-link">
+                <option value="Arbitrum Rinkeby"><div> { <img src={icon1} alt="" /> }</div></option>
                 <option value="Avalanche Fuji">Avalanche Fuji</option>
                 <option value="BNB Chain Testnet">BNB Chain Testnet</option>
                 <option value="Ethereum Rinkeby">Ethereum Rinkeby</option>
@@ -46,7 +62,8 @@ const NavBar = () => {
                 <option value="Fantom Testnet">Fantom Testnet</option>
                 <option value="POA Network Sokol">POA Network Sokol</option>
                 <option value="Polygon Mumbai">Polygon Mumbai</option>
-              </Form.Select>
+              </Form.Select> */}
+              <div className="border-1">Avalanche Fuji</div>
             </Nav.Link>
 
             <Nav.Link>

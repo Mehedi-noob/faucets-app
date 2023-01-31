@@ -13,6 +13,8 @@ const AdminPanel = () => {
             .then(data => setUsers(data))
     }, [])
 
+    
+
     return (
         <div>
             <div className="notice-board d-flex justify-content-center align-items-center">

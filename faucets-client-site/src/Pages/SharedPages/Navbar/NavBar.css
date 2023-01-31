@@ -2,6 +2,17 @@
   margin: 0 30px;
 }
 
+
+/* select#testnet-link option[value="Arbitrum Rinkeby"]   { background-image:url(../../../assets/icons/icon1.PNG);   }
+select#testnet-link option[value="Avalanche Fuji"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="BNB Chain Testnet"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="Ethereum Rinkeby"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="Fantom Testnet"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="Fantom Testnet"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="POA Network Sokol"] { background-image:url(../../../assets/icons/icon1.PNG); }
+select#testnet-link option[value="Polygon Mumbai"] { background-image:url(../../../assets/icons/icon1.PNG); } */
+
+
 .wallet-button {
   border: 2px solid #9b1fe9;
   color: #9b1fe9;
