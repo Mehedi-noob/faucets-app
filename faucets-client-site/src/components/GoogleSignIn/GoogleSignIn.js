@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const GoogleSignIn = () => {
   const [userG, setUserG] = useState({});
+  const{ setUser, user} = useContext(AuthContext);
   console.log(userG);
 
   const handleCallbackResponse = (response) => {
     const userObject = jwt_decode(response.credential);
     setUserG(userObject);
+    setUser({username: userG?.name, email: userG?.email, role: "User"});
+    localStorage.setItem('user', user)
   };
 
   useEffect(() => {
