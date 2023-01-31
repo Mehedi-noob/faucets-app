@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import GoogleSignIn from "../../components/GoogleSignIn/GoogleSignIn";
 import { toast } from "react-hot-toast";
+import FbAuthentication from "../../components/FbAuthentication/FbAuthentication";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -103,7 +104,7 @@ const SignUp = () => {
             </p>
             <h5 className="text-center">Or</h5>
             <div className="d-flex justify-content-center my-4">
-              <GoogleSignIn></GoogleSignIn>
+              <GoogleSignIn></GoogleSignIn><FbAuthentication></FbAuthentication>
             </div>
           </Form>
         </Card.Body>

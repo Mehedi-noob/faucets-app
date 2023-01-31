@@ -9,24 +9,41 @@ import WalletModal from "../../../components/WalletModal/WalletModal";
 import Form from "react-bootstrap/Form";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import { Dropdown, DropdownButton} from 'react-bootstrap';
 
-const icon1 = require('../../../assets/icons/icon1.PNG')
-const icon2 = require('../../../assets/icons/icon2.PNG')
-const icon3 = require('../../../assets/icons/icon3.PNG')
-const icon4 = require('../../../assets/icons/icon4.PNG')
-const icon5 = require('../../../assets/icons/icon5.PNG')
-const icon6 = require('../../../assets/icons/icon6.PNG')
-const icon7 = require('../../../assets/icons/icon7.PNG')
-const icon8 = require('../../../assets/icons/icon8.PNG')
-const icon9 = require('../../../assets/icons/icon9.PNG')
+
 
 const NavBar = () => {
 
-  const ic = <img src={icon1}></img>
+  const ic1 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon1.PNG')}></img>
+  const ic2 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon2.PNG')}></img>
+  const ic3 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon3.PNG')}></img>
+  const ic4 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon4.PNG')}></img>
+  const ic5 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon5.PNG')}></img>
+  const ic6 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon6.PNG')}></img>
+  const ic7 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon7.PNG')}></img>
+  const ic8 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon8.PNG')}></img>
+  const ic9 = <img style={{width: "15px"}} src={require('../../../assets/icons/icon9.PNG')}></img>
+
+  const options = [
+    {icon: ic1, name: "Ethereum Kovan"},
+    {icon: ic2, name: "Arbitrum Rinkeby"},
+    {icon: ic3, name: "Avalanche Fuji"},
+    {icon: ic4, name: "BNB Chain Testnet"},
+    {icon: ic5, name: "Ethereum Rinkeby"},
+    {icon: ic6, name: "Fantom Testnet"},
+    {icon: ic7, name: "Harmony Testnet"},
+    {icon: ic8, name: "POA Network Sokol"},
+    {icon: ic9, name: "Polygon Mumbai"},
+  ]
 
   const [openMenu, setOpenMenu] = useState(false);
   const [show, setShow] = useState(false);
-  const {setTestnet} = useContext(AuthContext);
+  const { setTestnet, testnet } = useContext(AuthContext);
+
+  const handleSelect = (eventKey) => {
+    setTestnet(eventKey);
+  }; 
 
   const handleShow = () => setShow(true);
   return (
@@ -43,27 +60,25 @@ const NavBar = () => {
             Faucets
           </h2>
         </Link>
-        <Link to="/admin" className=" text-decoration-none">
-          <h2 className="ms-5 fs-3 fw-semibold custom-font mb-0">
-            Admin Panel
-          </h2>
-        </Link>
+        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            
+
             <Nav.Link>
-              {/* <Form.Select onChange={(e)=>setTestnet(e.target.value)} aria-label="Default select example" id="testnet-link">
-                <option value="Arbitrum Rinkeby"><div> { <img src={icon1} alt="" /> }</div></option>
-                <option value="Avalanche Fuji">Avalanche Fuji</option>
-                <option value="BNB Chain Testnet">BNB Chain Testnet</option>
-                <option value="Ethereum Rinkeby">Ethereum Rinkeby</option>
-                <option value="Fantom Testnet">Fantom Testnet</option>
-                <option value="Fantom Testnet">Fantom Testnet</option>
-                <option value="POA Network Sokol">POA Network Sokol</option>
-                <option value="Polygon Mumbai">Polygon Mumbai</option>
-              </Form.Select> */}
-              <div className="border-1">Avalanche Fuji</div>
+              
+              <DropdownButton
+                id="dropdown-basic-button"
+                title={testnet}
+                onSelect={handleSelect}
+              >
+                {
+                  options.map((option, id)=><Dropdown.Item key={id} eventKey={option.name}>
+                  {option.icon} {option.name}
+               </Dropdown.Item>)
+                }
+                
+              </DropdownButton>
             </Nav.Link>
 
             <Nav.Link>

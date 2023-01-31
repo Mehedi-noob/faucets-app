@@ -1,5 +1,5 @@
-.dropdownProfile{
-  position:absolute;
+.dropdownProfile {
+  position: absolute;
   top: 4rem;
   right: 3.5rem;
   width: 150px;
@@ -9,19 +9,25 @@
   border: 1px solid #ddd;
 }
 
-.dropdownProfile > a{
+.dropdownProfile>a {
   list-style-type: none;
   color: #6d7380;
   padding-left: 8px;
   text-decoration: none;
 }
-.dropdownProfile > div > a{
+
+.dropdownProfile>div>a {
   color: #6d7380;
   text-decoration: none;
+  padding-left: 8px;
 }
 
-.dropdownProfile > a:hover{
+.dropdownProfile>div>a:hover {
   background-color: #eef2fe;
   color: #6d7380;
 }
 
+.dropdownProfile>a:hover {
+  background-color: #eef2fe;
+  color: #6d7380;
+}

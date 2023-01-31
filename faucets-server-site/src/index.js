@@ -2,8 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { connect } = require("./db");
 const port = process.env.PORT || 5000;
-const productsHandler = require("./routeHandler/productsHandler");
-const categoriesHandler = require("./routeHandler/categoriesHandler");
+
 const usersHandler = require("./routeHandler/usersHandler");
 
 // Middleware
@@ -15,8 +14,6 @@ app.use(express.json());
 connect();
 
 // API routes
-app.use("/products", productsHandler);
-app.use("/categories", categoriesHandler);
 app.use("/user", usersHandler);
 
 

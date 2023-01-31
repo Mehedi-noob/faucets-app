@@ -23,6 +23,11 @@ const ProfileDropdown = ({ setOpenMenu, openMenu }) => {
           user && <Link onClick={logOut}>Log Out</Link>
         }
         <Link to="/faq">FAQ</Link>
+        <Link to="/admin">
+          
+            Admin Panel
+         
+        </Link>
       </ul>
     </div>
   );

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
 
 const GoogleSignIn = () => {
-  const [user, setUser] = useState({});
-  console.log(user);
+  const [userG, setUserG] = useState({});
+  console.log(userG);
 
   const handleCallbackResponse = (response) => {
     const userObject = jwt_decode(response.credential);
-    setUser(userObject);
+    setUserG(userObject);
   };
 
   useEffect(() => {
